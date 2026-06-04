@@ -204,4 +204,9 @@ if (!configExiste) {
 
 console.log('✅ Base de datos lista:', dbPath);
 
+const empExiste = db.prepare('SELECT id_empleado FROM empleados WHERE id_empleado = 1').get();
+if (!empExiste) {
+  db.prepare(`INSERT INTO empleados (id_empleado, nombre, apellido, puesto, fecha_contratacion) VALUES (1, 'Admin', 'Sistema', 'Gerente', '2026-01-01')`).run();
+}
+
 module.exports = db;

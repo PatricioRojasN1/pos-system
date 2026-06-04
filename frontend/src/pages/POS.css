@@ -1,0 +1,331 @@
+.pos-page {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 48px);
+}
+
+.pos-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.pos-right {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.pos-header h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Barra de búsqueda */
+.scan-row {
+  display: flex;
+  gap: 8px;
+}
+
+.input-busqueda {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+}
+.input-busqueda:focus { border-color: #2563eb; }
+
+.btn-buscar {
+  padding: 10px 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btn-buscar:hover { background: #1d4ed8; }
+
+.btn-scan {
+  padding: 10px 14px;
+  background: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btn-scan.activo { background: #dc2626; }
+
+/* Scanner */
+.scanner-container {
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 320px;
+}
+
+#qr-reader {
+  width: 100% !important;
+  border: none !important;
+}
+
+#qr-reader video { width: 100% !important; }
+#qr-reader__scan_region { background: transparent !important; }
+#qr-reader__dashboard_section_csr button {
+  background: #2563eb !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+}
+
+/* Error */
+.error-bar {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+}
+.error-bar button {
+  background: none;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Carrito */
+.carrito {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow-y: auto;
+}
+
+.carrito-vacio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.carrito-tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.carrito-tabla th {
+  background: #f8fafc;
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+}
+
+.carrito-tabla td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+}
+
+.producto-nombre {
+  font-weight: 600;
+  color: #1e293b;
+  max-width: 180px;
+}
+
+.cantidad-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cantidad-ctrl button {
+  width: 26px;
+  height: 26px;
+  border: 1.5px solid #e2e8f0;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cantidad-ctrl button:hover { background: #f1f5f9; }
+.cantidad-ctrl span { font-weight: 600; min-width: 20px; text-align: center; }
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px;
+}
+
+/* Panel derecho */
+.totales-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+}
+
+.totales-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.total-final {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1e293b;
+  padding-top: 8px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.descuento-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.descuento-row label { font-size: 0.8rem; color: #64748b; }
+.input-descuento {
+  padding: 6px 10px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+}
+.input-descuento:focus { border-color: #2563eb; }
+
+.metodo-pago { display: flex; flex-direction: column; gap: 6px; }
+.metodo-pago label { font-size: 0.8rem; color: #64748b; }
+.metodo-btns { display: flex; flex-direction: column; gap: 6px; }
+
+.btn-metodo {
+  padding: 8px;
+  border: 1.5px solid #e2e8f0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+.btn-metodo:hover { background: #f8fafc; }
+.btn-metodo.activo { border-color: #2563eb; background: #eff6ff; color: #2563eb; }
+
+.btn-cobrar {
+  padding: 14px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-cobrar:hover:not(:disabled) { background: #15803d; }
+.btn-cobrar:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-cancelar {
+  padding: 10px;
+  background: transparent;
+  color: #ef4444;
+  border: 1.5px solid #ef4444;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-cancelar:hover:not(:disabled) { background: #fef2f2; }
+.btn-cancelar:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Ticket */
+.ticket-page {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ticket {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+}
+
+.ticket h2 { font-size: 1.3rem; margin-bottom: 4px; }
+.ticket-fecha { color: #64748b; font-size: 0.85rem; }
+.ticket-folio { color: #2563eb; font-weight: 700; margin-bottom: 12px; }
+.ticket hr { border: none; border-top: 1px dashed #e2e8f0; margin: 12px 0; }
+
+.ticket-items { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.ticket-items th { text-align: left; padding: 6px; color: #64748b; border-bottom: 1px solid #e2e8f0; }
+.ticket-items td { padding: 6px; }
+
+.ticket-totales { display: flex; flex-direction: column; gap: 6px; }
+.ticket-totales div { display: flex; justify-content: space-between; font-size: 0.9rem; }
+.ticket-total { font-weight: 800; font-size: 1.1rem; padding-top: 6px; border-top: 2px solid #e2e8f0; }
+
+.btn-nueva-venta {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-nueva-venta:hover { background: #1d4ed8; }
+
+/* Responsive móvil */
+@media (max-width: 768px) {
+  .pos-page { flex-direction: column; height: auto; }
+  .pos-right { width: 100%; }
+  .totales-card { position: static; }
+  .metodo-btns { flex-direction: row; }
+  .btn-metodo { flex: 1; font-size: 0.75rem; }
+}
